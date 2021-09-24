@@ -1,55 +1,37 @@
-// ANDMETÜÜBID
+// tüübiteisendused
 
-// PRIMITIVES
+let val;
 
-// TEKST
-const name = "Kadi Tamm";
+// number -> string
+val = String(555);
+val = String(4+4);
+val = String(5.6);
 
-console.log(name);
-console.log(typeof name);
+// boolean -> string
+val = String(true);
+val = String(false);
 
-// NUMBRID
-const age = 15;
-const height = 1.75;
+// object -> string
+val = String(new Date());
 
-console.log(age);
-console.log(typeof height);
+// array -> string
+val = String([1, 2, 3, 4]);
 
-// TÕEVÄÄRTUSED
-const hasKids = false;
+// toString()
+val = (5).toString();
 
+// string -> number
+val = Number("5");
 
-console.log(hasKids);
-console.log(typeof hasKids);
+// ARVUTUSED
 
-// NULL
-const hasAirplane = null;
+const num1 = 64;
+const num2 = 4;
 
-let test;
+val = num1 / num2;
 
-console.log(test);
-console.log(typeof test);
+// MATH
 
-// REFERENCE TYPES
-const hobbies = ["music", "sport"];
+val = Math.PI;
 
-console.log(hobbies);
-console.log(typeof hobbies);
-
-// OBJEKT
-
-const person = {
-	name: name,
-	age: age,
-	height: height,
-	hasKids: hasKids,
-	hobbies: hobbies
-};
-
-console.log(person);
-console.log(typeof person)
-
-const today = new Date();
-
-console.log(today);
-console.log(typeof today);
+console.log(val);
