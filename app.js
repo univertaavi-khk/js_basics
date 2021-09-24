@@ -1,37 +1,36 @@
-// tüübiteisendused
+const firstName = "Kadi";
+const surName = "Tamm";
+const age = 20;
+const text = "Tere, olen Kadi!";
+const tags = "arendus,veeb";
 
 let val;
 
-// number -> string
-val = String(555);
-val = String(4+4);
-val = String(5.6);
+// concatenation
+val = firstName + " " + surName;
 
-// boolean -> string
-val = String(true);
-val = String(false);
+val = firstName;
+val += surName;
 
-// object -> string
-val = String(new Date());
+val = text + " Minu töövaldkond on " + tags;
 
-// array -> string
-val = String([1, 2, 3, 4]);
+// escaping
 
-// toString()
-val = (5).toString();
+val = "See on \"jutumärkides\"";
 
-// string -> number
-val = Number("5");
+// case
+val = firstName.toLowerCase() + " " + surName.toUpperCase();
 
-// ARVUTUSED
-
-const num1 = 64;
-const num2 = 4;
-
-val = num1 / num2;
-
-// MATH
-
-val = Math.PI;
+val = surName.charAt(surName.length - 2);
 
 console.log(val);
+
+val = `
+	<ul>
+		<li>Eesnimi: ${firstName}</li>
+		<li>Perenimi: ${surName}</li>
+		<li>Vanus: ${age}</li>
+		<li>Alad: ${tags}</li>
+	</ul>
+`;
+document.body.innerHTML = val;
