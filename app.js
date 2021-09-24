@@ -1,25 +1,55 @@
-// MUUTUJAD
-/*
-SEE
-ON
-MITME
-REALINE
-COMMENT
-*/
+// ANDMETÜÜBID
 
-// SEE ON MUUTUJA
-let firstName = "Kadi";
+// PRIMITIVES
 
-// SEE ON KONSTANT
-const surName = "Tamm";
+// TEKST
+const name = "Kadi Tamm";
 
-// MASSIIVID
-const numbers = [1, 2, 3, 4];
-numbers.push(6);
+console.log(name);
+console.log(typeof name);
+
+// NUMBRID
+const age = 15;
+const height = 1.75;
+
+console.log(age);
+console.log(typeof height);
+
+// TÕEVÄÄRTUSED
+const hasKids = false;
+
+
+console.log(hasKids);
+console.log(typeof hasKids);
+
+// NULL
+const hasAirplane = null;
+
+let test;
+
+console.log(test);
+console.log(typeof test);
+
+// REFERENCE TYPES
+const hobbies = ["music", "sport"];
+
+console.log(hobbies);
+console.log(typeof hobbies);
+
+// OBJEKT
 
 const person = {
-	name: firstName
-	age: 20
+	name: name,
+	age: age,
+	height: height,
+	hasKids: hasKids,
+	hobbies: hobbies
 };
 
-console.log(firstName, surName);
+console.log(person);
+console.log(typeof person)
+
+const today = new Date();
+
+console.log(today);
+console.log(typeof today);
