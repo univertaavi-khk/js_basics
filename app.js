@@ -1,22 +1,9 @@
-const person = {
-    firstName: "Kadi",
-    lastName: "Tamm",
-    age: 23,
-    email: "kadi.tamm@gmail.com",
-    hobbies: ["muusika", "sport"],
-    address: {
-        city: "Tallinn",
-        country: "Harjumaa"
-    },
-    getBirthdayYear: function(){
-        return 2021 - this.age;
-    }
-};
+const today = new Date();
 
-let val;
+val = today.getMonth();
+birthday = new Date("10/02/2021 12:00:50");
+birthday.setMonth(1);
+birthday.setDate(28);
 
-val = person.firstName;
-val = person.address.city;
-val = person.getBirthdayYear();
-
+console.log(birthday);
 console.log(val);
