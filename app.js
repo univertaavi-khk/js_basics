@@ -1,24 +1,22 @@
-const numbers = [56, 44, 43, 36, 23, 33, 5];
-const numbers2 = [7, 0, 4, 5];
-numbers.splice(5, 0, 100)
+const person = {
+    firstName: "Kadi",
+    lastName: "Tamm",
+    age: 23,
+    email: "kadi.tamm@gmail.com",
+    hobbies: ["muusika", "sport"],
+    address: {
+        city: "Tallinn",
+        country: "Harjumaa"
+    },
+    getBirthdayYear: function(){
+        return 2021 - this.age;
+    }
+};
 
-numbers.push(200);
+let val;
 
-numbers.unshift(120);
+val = person.firstName;
+val = person.address.city;
+val = person.getBirthdayYear();
 
-numbers.pop()
-
-numbers.shift();
-
-numbers.splice(1, 2)
-
-val = numbers.indexOf(100);
-
-
-val = numbers.concat(numbers2);
-
-
-
-
-console.log(numbers);
 console.log(val);
