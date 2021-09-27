@@ -1,36 +1,24 @@
-const firstName = "Kadi";
-const surName = "Tamm";
-const age = 20;
-const text = "Tere, olen Kadi!";
-const tags = "arendus,veeb";
+const numbers = [56, 44, 43, 36, 23, 33, 5];
+const numbers2 = [7, 0, 4, 5];
+numbers.splice(5, 0, 100)
 
-let val;
+numbers.push(200);
 
-// concatenation
-val = firstName + " " + surName;
+numbers.unshift(120);
 
-val = firstName;
-val += surName;
+numbers.pop()
 
-val = text + " Minu töövaldkond on " + tags;
+numbers.shift();
 
-// escaping
+numbers.splice(1, 2)
 
-val = "See on \"jutumärkides\"";
+val = numbers.indexOf(100);
 
-// case
-val = firstName.toLowerCase() + " " + surName.toUpperCase();
 
-val = surName.charAt(surName.length - 2);
+val = numbers.concat(numbers2);
 
+
+
+
+console.log(numbers);
 console.log(val);
-
-val = `
-	<ul>
-		<li>Eesnimi: ${firstName}</li>
-		<li>Perenimi: ${surName}</li>
-		<li>Vanus: ${age}</li>
-		<li>Alad: ${tags}</li>
-	</ul>
-`;
-document.body.innerHTML = val;
