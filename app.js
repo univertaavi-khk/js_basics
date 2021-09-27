@@ -1,47 +1,56 @@
-const id = 100;
+let color = "red";
 
+switch(color){
+    case "red":
+        console.log("Stop!");
+        break;
 
-// võrdub - ==
-// võrdub + tüübikontroll - ===
-// ei võrdu - !=
-// ei võrdu + tüübikontroll - !==
+    case "yellow":
+        console.log("Attention!");
+        break;
 
-
-/*if(id == 100){
-    console.log("OK")
-} else {
-    console.log("NOT OK")
-};
-*/
-
-let color = "greeen";
-
-if(color==="red"){
-    console.log("Stop!");
-} else if(color==="yellow"){
-    console.log("Attention!");
-} else if(color==="green"){
-    console.log("Go!");
-} else {
-    console.log("Invalid color!");
+    case "green":
+        console.log("Go!");
+        break;
+    default:
+        console.log("This color is not allowed!");
 }
 
-// and - &&
-// or - ||
+const day = new Date();
 
-let name = "Kadi";
-let age = 55;
+let weekday = String(day.getDay());
 
-if(age > 0 && age <= 12){
-    console.log(`${name} on laps`);
-} else if(age >= 13 && age < 18) {
-    console.log(`${name} on nooruk`);
-} else {
-    console.log(`${name} on täiskasvanu`);
+switch(weekday){
+    case "1":
+        console.log("Esmaspäev");
+        break;
+
+    case "2":
+        console.log("Teisipäev");
+        break;
+
+    case "3":
+        console.log("Kolmapäev");
+        break;
+
+    case "4":
+        console.log("Neljapäev");
+        break;
+
+    case "5":
+        console.log("Reede");
+        break;
+
+    case "6":
+        console.log("Laupäev");
+        break;
+
+    case "7":
+        console.log("Pühapäev");
+        break;
+
+    default:
+        console.log("See pole nädalapäev");
+        break;
 }
-
-if(age < 18 || age > 65) {
-    console.log(`${name} ei saa maratonile registreerida`);
-} else {
-    console.log(`${name} saab maratonile registreerida`);
-}
+console.log(day.getDay());
