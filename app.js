@@ -17,4 +17,7 @@ val = listItem.parentElement.parentElement;
 
 val = listItem.nextElementSibling;
 val = listItem.nextElementSibling.nextElementSibling.previousElementSibling;
+
+
+
 console.log(val);
