@@ -1,21 +1,7 @@
-for(let i = 0; i < 10; i++){
-    console.log(i);
-}
+let val;
 
-for(let i = 0; i < 10; i++){
-    console.log(i);
-    if(i === 5) {
-        continue;
-    }
-}
+val = document.getElementById("task-title");
 
-let i = 0;
-while(i < 10){
-    console.log(i);
-    i++;
-}
+document.getElementById("task-title").style.background = "#000000"
 
-const cars = ["Ford", "Toyota", "Mercedes-Benz"];
-for(let i = 0; i < cars.length; i++){
-    console.log[i];
-}
+console.log(val);
