@@ -1,22 +1,20 @@
 let val;
-val = document.querySelectorAll('li');
 
-for(let i = 0; i < val.length; i++){
-    if(i % 2 == 0) {
-        document.querySelectorAll("li")[i].style.background = "#CCCCCC";    
-    } else {
-        document.querySelectorAll("li")[i].style.background = "#FFFFFF";
-    }
-    
-};
+const list = document.querySelector("ul");
+const listItem = document.querySelector("li:first-child");
 
-oddli = document.querySelectorAll("li:nth-child(odd)");
-evenli = document.querySelectorAll("li:nth-child(even)");
+val = list.children;
+val = list.children[1];
+list.children[1].textContent = "Study XML";
+val = list.children[2].children[0].style.color = "blue";
 
-oddli.forEach(function(li) {
-    li.style.background = "orange";
-})
+val = list.firstElementChild;
+val = list.lastElementChild;
+val = list.childElementCount;
 
-evenli.forEach(function(li) {
-    li.style.background = "salmon";
-})
+val = listItem.parentElement;
+val = listItem.parentElement.parentElement;
+
+val = listItem.nextElementSibling;
+val = listItem.nextElementSibling.nextElementSibling.previousElementSibling;
+console.log(val);
