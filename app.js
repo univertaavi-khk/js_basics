@@ -1,15 +1,8 @@
 // event elements
 
-const form = document.querySelector("form");
-const taskInput = document.querySelector("#task")
+const list = document.querySelector("ul");
 
-form.addEventListener("keydown", runEvent);
-form.addEventListener("keyup", runEvent);
-form.addEventListener("focus", runEvent);
-form.addEventListener("blur", runEvent);
-form.addEventListener("cut", runEvent);
-form.addEventListener("paste", runEvent);
-form.addEventListener("input", runEvent);
+list.addEventListener("click", runEvent);
 
 function runEvent(e) {
     console.log(`Event is ${e.type}`);
