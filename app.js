@@ -1,19 +1,15 @@
-let val;
+// event elements
 
-const li = document.createElement("li");
+const form = document.querySelector("form");
+const taskInput = document.querySelector("#task")
 
-li.className = "collection-item";
+form.addEventListener("submit", runEvent)
 
-li.appendChild(document.createTextNode("Study JS element creation"));
+function runEvent(e) {
+    console.log(`Event is ${e.type}`);
+    console.log(taskInput.value)
+    taskInput.value = "";
+    e.preventDefault();
+}
 
-const link = document.createElement("a");
-link.className = "secondary-content";
-link.appendChild(document.createTextNode("X"));
-link.setAttribute("href", "#");
-li.appendChild(link);
-
-const ul = document.querySelector("ul");
-
-ul.appendChild(li);
-
-console.log(li);
+console.log(taskInput);
