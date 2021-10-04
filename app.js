@@ -1,23 +1,19 @@
 let val;
 
-const list = document.querySelector("ul");
-const listItem = document.querySelector("li:first-child");
+const li = document.createElement("li");
 
-val = list.children;
-val = list.children[1];
-list.children[1].textContent = "Study XML";
-val = list.children[2].children[0].style.color = "blue";
+li.className = "collection-item";
 
-val = list.firstElementChild;
-val = list.lastElementChild;
-val = list.childElementCount;
+li.appendChild(document.createTextNode("Study JS element creation"));
 
-val = listItem.parentElement;
-val = listItem.parentElement.parentElement;
+const link = document.createElement("a");
+link.className = "secondary-content";
+link.appendChild(document.createTextNode("X"));
+link.setAttribute("href", "#");
+li.appendChild(link);
 
-val = listItem.nextElementSibling;
-val = listItem.nextElementSibling.nextElementSibling.previousElementSibling;
+const ul = document.querySelector("ul");
 
+ul.appendChild(li);
 
-
-console.log(val);
+console.log(li);
