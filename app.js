@@ -3,14 +3,16 @@
 const form = document.querySelector("form");
 const taskInput = document.querySelector("#task");
 const list = document.querySelector("ul");
-const clearTasks = document.getElementById("clear-tasks")
+const clearTasks = document.getElementById("clear-tasks");
 
 form.addEventListener("submit", addTask);
 list.addEventListener("click",removeTask); 
-clearTasks.addEventListener("click", removeAllTasks)
+clearTasks.addEventListener("click", removeAllTasks);
+
+document.addEventListener("DOMContentLoaded", getTasksFromLS);
 
 
-function getTasksFromLocalStorage() {
+function getTasksFromLS() {
   tasks = localStorage.getItem('tasks') || []
 
   if (tasks) {
@@ -102,4 +104,29 @@ function clearTasksFromLS(task) {
         tasks = JSON.parse(localStorage.getItem("tasks"));
     }
     localStorage.removeItem("tasks", JSON.stringify(tasks))
+};
+
+function getTasksFromLS(e) {
+    let tasks;
+    if(localStorage.getItem("tasks") === null) {
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+    }
+    tasks.forEach(function(tasksElement, tasksIndex) {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        const ul = document.querySelector("ul");
+
+        li.className = "collection-item";
+        li.appendChild(document.createTextNode(tasksElement));
+        
+        link.className = "secondary-content";
+        link.appendChild(document.createTextNode("X"));
+        
+        link.setAttribute("href", "#");
+        li.appendChild(link);        
+        ul.appendChild(li);
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks))
 };
