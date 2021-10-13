@@ -61,7 +61,7 @@ function removeAllTasks(e) {
     const list = document.getElementById("taskList")
     if(confirm("Do you want to delete all tasks?")) {
         e.target.parentElement.remove();
-  
+        clearTasksFromLS();
         console.log(e.target.parentElement)
     }
     
@@ -94,3 +94,12 @@ function removeTaskFromLS(task) {
     localStorage.setItem("tasks", JSON.stringify(tasks))
 };
 
+function clearTasksFromLS(task) {
+    let tasks;
+    if(localStorage.getItem("tasks") === null) {
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+    }
+    localStorage.removeItem("tasks", JSON.stringify(tasks))
+};
