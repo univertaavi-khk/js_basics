@@ -4,12 +4,13 @@ const form = document.querySelector("form");
 const taskInput = document.querySelector("#task");
 const list = document.querySelector("ul");
 const clearTasks = document.getElementById("clear-tasks");
+const filterInput = document.querySelector("#filter");
 
 form.addEventListener("submit", addTask);
 list.addEventListener("click",removeTask); 
 clearTasks.addEventListener("click", removeAllTasks);
-
 document.addEventListener("DOMContentLoaded", getTasksFromLS);
+filterInput.addEventListener("keyup", filterTasks);
 
 
 function getTasksFromLS() {
@@ -41,10 +42,6 @@ function addTask(e) {
 
     taskInput.value = "";
     e.preventDefault();
-
-    
-
-
 };
 
 
@@ -64,7 +61,6 @@ function removeAllTasks(e) {
     if(confirm("Do you want to delete all tasks?")) {
         e.target.parentElement.remove();
         clearTasksFromLS();
-        console.log(e.target.parentElement)
     }
     
 };
@@ -78,7 +74,6 @@ function addTaskToLS(task) {
     }
     tasks.push(task);
     localStorage.setItem("tasks", JSON.stringify(tasks))
-    console.log(tasks);
 };
 
 function removeTaskFromLS(task) {
@@ -130,3 +125,16 @@ function getTasksFromLS(e) {
     });
     localStorage.setItem("tasks", JSON.stringify(tasks))
 };
+
+function filterTasks(e){
+    const text = e.target.value.toLowerCase();
+    const tasks = document.querySelectorAll("li")
+    tasks.forEach(function(li) {
+        const task = li.firstChild.textContent.toLowerCase()
+        if(task.indexOf(text) != -1 ) {
+            li.style.display = "block";
+        } else {
+            li.style.display = "none";
+        }
+    })
+}
